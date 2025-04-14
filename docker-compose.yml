@@ -12,12 +12,12 @@ services:
   db:
     image: postgres:alpine
     ports:
-      -5432:5432
+      - 5432:5432
     environment:
-      - POSGRES_USER=${DB_USER}
+      - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
     volumes:
-      - postgres_data:/var/lib/postgresql/data6
+      - postgres_db:/var/lib/postgresql/data6
 volumes:
-  postgres_db
+  postgres_db:
